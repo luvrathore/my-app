@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { Route, Switch, Routes } from 'react-router-dom';
 import './App.css';
+import sample1 from './assets/sample1.mp4';
+import ListPage from './practiceComponents/ListPage';
+import VideoPage from './practiceComponents/VideoPage';
+import PageNotFound from './practiceComponents/PageNotFound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="page">
+    <video class="video" autoplay loop muted controls>
+      <source src={sample1} type="video/mp4"/>
+    </video>
+    <info id="info">
+      <p>Video Name</p>
+      <p>Sports Name</p>
+      <p>Drill</p>
+      <Switch>
+      <Route exact path="/" component={ListPage } />
+      <Route path="/user" component={PageNotFound} />
+      </Switch>  
+    <boption>
+    </boption>
+    </info>
     </div>
   );
 }
